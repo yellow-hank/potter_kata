@@ -29,6 +29,7 @@ answer :
 ```
 ## Installation
 ```
+npm i 
 npm install -g nx
 ```
 
