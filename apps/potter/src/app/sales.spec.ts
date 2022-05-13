@@ -25,4 +25,11 @@ describe('Sales', () => {
     expect(sales.price([0, 1, 2, 4])).toBe(8 * 4 * 0.8);
     expect(sales.price([0, 1, 2, 3, 4])).toBe(8 * 5 * 0.75);
   });
+
+  test('testSeveralDiscounts', () => {
+    expect(sales.price([0, 0, 1])).toBe(8 + (8 * 2 * 0.95));
+    expect(sales.price([0, 0, 1, 1])).toBe(2 * (8 * 2 * 0.95));
+    expect(sales.price([0, 0, 1, 2, 2, 3])).toBe((8 * 4 * 0.8) + (8 * 2 * 0.95));
+    expect(sales.price([0, 1, 1, 2, 3, 4])).toBe(8 + (8 * 5 * 0.75));
+  });
 });
